@@ -5,5 +5,5 @@ from os.path import join as pjoin
 class deepgazeConfig(object):
 
     def __init__(self):
-
+        pass
         # fill this in with your own file paths, etc.

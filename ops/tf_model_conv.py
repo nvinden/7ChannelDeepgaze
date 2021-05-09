@@ -70,8 +70,8 @@ def train_and_eval(config):
     for record in tf.python_io.tf_record_iterator(validation_data):
         num_val_imgs += 1
 
-    print 'Number of training images', num_train_imgs
-    print 'Number of validation images', num_val_imgs
+    print('Number of training images', num_train_imgs)
+    print('Number of validation images', num_val_imgs)
 
     # Prepare model on GPU
     with tf.device('/gpu:0'):
@@ -228,7 +228,7 @@ def train_and_eval(config):
 
             # assert not np.isnan(loss_value), 'Model diverged with loss = NaN'
             if np.isnan(loss_value):
-                print 'yikes. nan loss -- check your cost function.'
+                print('yikes. nan loss -- check your cost function.')
                 import pdb
                 pdb.set_trace()
 

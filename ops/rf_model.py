@@ -20,7 +20,7 @@ def train_rf(num_features, config):
 
 def train_and_eval(config):
     """Train and evaluate the model."""
-    print 'model directory = %s' % config.model_output
+    print()'model directory = %s' % config.model_output
 
     num_features = 1e3
     model = train_rf(num_features, config)

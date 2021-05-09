@@ -36,7 +36,7 @@ def create_depth_graph(all_xy, theta, hw, resize):
         tf.float32, shape=[hw[0], hw[1]], name='depth_image')
 
     # Create difference maps
-    print 'Creating feature extraction graph'
+    print('Creating feature extraction graph')
     dms = []
     i0 = tf.constant(0)
     theta_shape = tf.constant(theta.shape)

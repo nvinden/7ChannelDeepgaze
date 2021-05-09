@@ -358,7 +358,7 @@ class model_struct:
             if self.trainable_layers is not None: # and name in self.trainable_layers:
                 var = tf.get_variable(
                     name=var_name, initializer=value, trainable=True)
-                print name, 'IS TRAINABLE'
+                print (name, 'IS TRAINABLE')
             else:
                 var = tf.get_variable(
                     name=var_name, initializer=value, trainable=False)

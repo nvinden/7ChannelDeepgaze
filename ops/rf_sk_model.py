@@ -5,7 +5,7 @@ from ops.extract_tfrecords import get_records
 
 def train_and_eval(config):
     """Train and evaluate the model."""
-    print 'model directory = %s' % config.model_output
+    print('model directory = %s') % config.model_output
 
     model = rf(
         n_estimators=config.num_trees, max_depth=config.tree_depth,

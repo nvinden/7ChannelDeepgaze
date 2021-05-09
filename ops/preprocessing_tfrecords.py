@@ -18,11 +18,11 @@ def flatten_list(l):
 def get_file_list(GEDI_path, label_directories, im_ext):
     files = []
     for idx in label_directories:
-        print 'Getting files from: %s' % (os.path.join(
-            GEDI_path, idx, '*' + im_ext))
+        print('Getting files from: %s' % (os.path.join(
+            GEDI_path, idx, '*' + im_ext)))
         dir_files = glob(os.path.join(GEDI_path, idx, '*' + im_ext))
         files += dir_files
-        print 'Found %s files' % len(dir_files)
+        print('Found %s files' % len(dir_files))
     return files
 
 
@@ -136,15 +136,15 @@ def image_converter(im_ext):
     elif im_ext == '.png':
         out_fun = tf.image.encode_png
     else:
-        print '-'*60
+        print ('-'*60)
         traceback.print_exc(file=sys.stdout)
-        print '-'*60
+        print ('-'*60)
     return out_fun
 
 
 def process_image_data(
         im_key, im_dict, output_file, im_ext, train_shards, hw, normalize):
-    print 'Building: %s' % output_file
+    print ('Building: %s' % output_file)
     files = im_dict[im_key]
     all_labels = im_dict[im_key + '_labels']
     output_pointer = output_file + im_key + '.tfrecords'
@@ -152,9 +152,9 @@ def process_image_data(
     with tf.python_io.TFRecordWriter(output_pointer) as tfrecord_writer:
         num_shards = np.round(len(files)/train_shards)
         batch_idx = np.repeat(np.arange(num_shards), train_shards)
-        print 'Storing data in {} shards. Using {}/{} training images \
+        print('Storing data in {} shards. Using {}/{} training images \
             (adjust shard size to change proportion).'.format(
-                num_shards, len(batch_idx), len(files))
+                num_shards, len(batch_idx), len(files)))
         batch_idx = np.concatenate((
             batch_idx, np.ones((len(files) - len(batch_idx))) * -1))
         for idx in tqdm(range(num_shards)):
@@ -196,7 +196,7 @@ def simple_tf_records(
 
 
 def extract_to_tf_records(files, label_list, output_pointer, config, k):
-    print 'Building: %s' % config.tfrecord_dir
+    print('Building: %s' % config.tfrecord_dir)
     max_array = np.zeros(len(files))
     with tf.python_io.TFRecordWriter(output_pointer) as tfrecord_writer:
         for idx, f in tqdm(enumerate(files), total=len(files)):
@@ -226,7 +226,7 @@ def extract_to_tf_records(files, label_list, output_pointer, config, k):
     # Calculate ratio of +:-
     lab_counts = np.asarray([np.sum(label_list == 0), np.sum(label_list == 1)]).astype(float)
     ratio = lab_counts / np.asarray((len(label_list))).astype(float)
-    print 'Data ratio is %s' % ratio
+    print('Data ratio is %s' % ratio)
     np.savez(
         os.path.join(
             config.tfrecord_dir, k + '_' + config.max_file),

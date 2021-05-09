@@ -60,7 +60,7 @@ def create_depth_graph(all_xy, theta, hw, resize):
     # total_obs = hw[0] * hw[1]
 
     # Create difference maps
-    print 'Creating feature extraction graph'
+    print('Creating feature extraction graph')
     # for i, th in tqdm(enumerate(theta), total=len(theta)):
     for i, th in enumerate(theta):
         im1 = pad_image(depth_image, th[0], hw)

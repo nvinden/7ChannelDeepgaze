@@ -19,6 +19,8 @@ def main(show_output):
 
 
 if __name__ == '__main__':
+    print("TEST")
+    '''
     parser = argparse.ArgumentParser()
     parser.add_argument(
         '--show_output', dest='show_output',
@@ -26,3 +28,4 @@ if __name__ == '__main__':
     args=parser.parse_args()
     print("HELLO")
     main(**vars(args))
+    '''

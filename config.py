@@ -39,7 +39,7 @@ class deepgazeConfig(object):
         self.resize = [224, 224]
 
         # Model settings
-        self.num_epochs = 25
+        self.num_epochs = None
         self.model_type = 'vgg_19_feature_model'
         # , 'fc_conv1', 'fc_conv2', 'fc_conv3']  # layers for batchnorm
         self.batch_norm = ['conv1', 'conv2',

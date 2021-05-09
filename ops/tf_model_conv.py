@@ -15,7 +15,7 @@ from scipy.misc import imsave
 sys.path.append(
     '/media/data_cifs/ajones/smart_playroom/smart_playroom/deepgaze/deepgaze_generic/models')
 
-from deepgaze_model import model_struct
+from models.deepgaze_model import model_struct
 
 
 def train_and_eval(config):

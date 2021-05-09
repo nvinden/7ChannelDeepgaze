@@ -9,8 +9,8 @@ from ops.data_loader import inputs
 from ops.tf_fun import softmax_cost, fscore, make_dir, count_nonzero, salicon_cost, euclidean_loss, normal_log, special_sauce_loss
 import matplotlib.pyplot as plt
 from scipy.ndimage.filters import gaussian_filter
-from scipy.misc import imread
-from scipy.misc import imsave
+from matplotlib.pyplot import imread
+from matplotlib.pyplot import imsave
 
 sys.path.append(
     '/media/data_cifs/ajones/smart_playroom/smart_playroom/deepgaze/deepgaze_generic/models')

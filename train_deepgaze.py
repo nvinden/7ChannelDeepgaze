@@ -24,4 +24,5 @@ if __name__ == '__main__':
         '--show_output', dest='show_output',
         default=None, help='Show example output every 20 steps (for debugging purposes).')
     args=parser.parse_args()
+    print("HELLO")
     main(**vars(args))

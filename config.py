@@ -33,9 +33,8 @@ class deepgazeConfig(object):
         self.train_summaries = self.base_dir
         self.train_checkpoint = pjoin(self.base_dir, 'train_checkpoint/')
 
-        self.train_data = pjoin(
-            self.tfrecord_dir, 'train_salicon.tfrecords')
-        self.val_data = pjoin(self.tfrecord_dir, 'val_salicon.tfrecords')
+        self.train_data = pjoin(self.image_dir, 'train')
+        self.val_data = pjoin(self.image_dir, 'val')
         self.resize = [224, 224]
 
         # Model settings

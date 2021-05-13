@@ -7,7 +7,7 @@ class deepgazeConfig(object):
     def __init__(self):
         # Directory settings
         # fill this in with your own file paths, etc.
-        self.base_dir = '/content/7ChannelDeepgaze/'
+        self.base_dir = '/content/drive/MyDrive/7Channel/7ChannelDeepgaze/'
 
         # USE FOR LARGE DATASET
         self.image_dir = '/content/drive/MyDrive/7Channel/Salicon/images/'
@@ -29,7 +29,7 @@ class deepgazeConfig(object):
 
         self.image_regex = '*.jpg'
         self.model_output = pjoin(self.base_dir, 'model_output')
-        self.tfrecord_dir = '/content/drive/MyDrive/7Channel'
+        self.tfrecord_dir = self.base_dir
         self.train_summaries = self.base_dir
         self.train_checkpoint = pjoin(self.base_dir, 'train_checkpoint/')
 
